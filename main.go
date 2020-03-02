@@ -17,7 +17,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 }
 
 func home(w http.ResponseWriter, req *http.Request) {
-	file, err := os.Open("home.html")
+	file, err := os.Open("./view/home.html")
 	if err != nil {
 		fmt.Fprintf(w, err.Error())
 		return
