@@ -12,5 +12,5 @@ COPY ./view ./bin/view
 FROM alpine
 WORKDIR '/app'
 COPY --from=builder /app/bin .
-RUN ls
+EXPOSE 80
 CMD [ "./prod_app" ]
