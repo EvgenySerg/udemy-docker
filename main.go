@@ -44,7 +44,7 @@ func headers(w http.ResponseWriter, req *http.Request) {
 func main() {
 
 	log.Println("starting")
-	port := "3000"
+	port := os.Args[1]
 	fmt.Println(fmt.Sprintf("server started on port %s", port))
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/", home)

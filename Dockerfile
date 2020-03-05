@@ -1,5 +1,6 @@
 FROM golang:alpine as builder
 ENV CGO_ENABLED=0
+
 WORKDIR '/app'
 
 COPY . .
@@ -13,4 +14,4 @@ FROM alpine
 WORKDIR '/app'
 COPY --from=builder /app/bin .
 EXPOSE 80
-CMD [ "./prod_app" ]
+CMD [ "./prod_app", "80" ]
